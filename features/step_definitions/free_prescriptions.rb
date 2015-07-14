@@ -31,7 +31,7 @@ When(/^they are pregnant$/) do
 end
 
 And(/^they have a valid MedEx certificate$/) do
-  @person.valid_medex = true
+  @person.certificates[:valid_medex] = true
 end
 
 When(/^they have had a baby in the past (\d+) months$/) do |arg|
@@ -47,7 +47,7 @@ When(/^they have a continuing physical disability that prevents them from going 
 end
 
 When(/^they have a War Pension exemption certificate$/) do
-  @person.war_pension_exemption_certificate = true
+  @person.certificates[:war_pension_exemption_certificate] = true
 end
 
 And(/^the prescription is for their accepted disability$/) do
@@ -59,11 +59,11 @@ When(/^they are an inpatient$/) do
 end
 
 When(/^they or their partner have an NHS tax credit exemption certificate$/) do
-  @person.nhs_tax_credit_exemption_certificate
+  @person.certificates[:nhs_tax_credit_exemption_certificate] = true
 end
 
 When(/^they or their partner have a valid HC2 certificate$/) do
-  @person.valid_hc2_certificate
+  @person.certificates[:valid_hc2_certificate] = true
 end
 
 When(/^they or their partner receive the "([^"]*)" benefit$/) do |benefit_name|
